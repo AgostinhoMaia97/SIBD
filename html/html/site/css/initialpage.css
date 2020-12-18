@@ -1,0 +1,83 @@
+body {
+  background-color: #ababfd;
+
+  margin: 0 auto;
+  width: 60em;
+
+  display: grid;
+  grid-template-columns: [start] 4fr [middle] 1fr [end];
+  grid-template-rows: [start] auto [topics] auto [posts] 1fr [footer] auto [end];
+}
+
+body > header h1 {
+  font-family: garamond;
+
+}
+
+
+body > header {
+  grid-column: start / end;
+}
+
+#topics {
+  background-color: #19B6E9;
+  grid-column: start;
+}
+
+aside {
+  grid-column: middle;
+  grid-row: topics/end;
+}
+
+#posts {
+  grid-column: start;
+}
+
+
+body > header {
+  display: grid;
+  grid-template-columns: [start] 4fr [middle] 1fr [end];
+  grid-template-rows: auto auto;
+}
+
+
+body > header h1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+body > header #signup {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;}
+
+
+#topics ul {
+  display: flex;
+  flex-direction: row;
+}
+
+#topics li {
+  display: block;
+  flex: 1;
+  color: white;
+}
+
+#topics li a {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: x-large;
+}
+footer {
+  bottom:100;
+  width:100%;
+  height:60px;   /* Height of the footer */
+}
+
+footer a {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}

@@ -1,7 +1,5 @@
 <?php
-  session_start();
-  $msg = $_SESSION["msg"];
-  unset($_SESSION["msg"]);
+ 
   require_once("../database/init.php");
   require_once("../database/posts.php");
   include_once("../templates/homepage_section/header_pagina_inicial_tpl.php");

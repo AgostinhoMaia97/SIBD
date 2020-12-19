@@ -25,7 +25,7 @@
     </tr>
     <tr>
       <td>Post Story</td>
-      <td><textarea type="text" placeholder ="Story" name = "story"></textarea></td>
+      <td><textarea type="text" placeholder ="Story" name = "content"></textarea></td>
     </tr>
     
     <tr>

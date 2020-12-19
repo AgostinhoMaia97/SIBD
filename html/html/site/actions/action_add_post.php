@@ -3,13 +3,12 @@
     require_once("../database/init.php");
     require_once("../database/posts.php");
 
-    $post_title = $_POST["posttitle"];
-    $story = $_POST["story"];
     $topic = $_POST["topic"];
+    $post_title = $_POST["posttitle"];
+    $content = $_POST["content"];
     //$preview = $_POST["preview"];
 
     
-    insertPosts($topic_name, $post_title, $story);
-    insertTopic($topic);
+    insertPosts($topic, $post_title, $content);
     
 ?>

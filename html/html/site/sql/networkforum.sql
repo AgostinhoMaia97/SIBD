@@ -20,11 +20,13 @@ create table forumpost (
     postid integer PRIMARY KEY AUTOINCREMENT,
     posttitle text NOT NULL,
     content text CHECK(LENGTH(content)>= 0 AND LENGTH(content)<20000),
-    username integer REFERENCES user, 
+    username text REFERENCES user, 
     topic text REFERENCES topic, 
     postrate integer CHECK(postrate>=0 AND postrate <=5),
     forumpostcollection_id integer REFERENCES collection
     );
+
+
 
 drop table if exists postevaluation;
 

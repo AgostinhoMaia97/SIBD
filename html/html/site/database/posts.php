@@ -10,11 +10,22 @@ function getAllPosts()
   return $stmt->fetchAll();
 }
 
+
 function getPostsByTopic($topic){
-  global $db;
-  $stmt = $db->prepare('SELECT * FROM forumpost JOIN topic USING (topic_name) WHERE name = ?');
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT posttitle,content,topic FROM forumpost  WHERE topic = ?');
   $stmt->execute(array($topic));
+  return $stmt->fetchAll();
+}
+
+function getPostbyTitle($title)
+{
+   global $dbh;
+  
+  $stmt = $dbh->prepare('SELECT posttitle, content, username from forumpost where posttitle = ?');
+  $stmt->execute(array($title));
   return $stmt->fetch();
+
 }
 
 function insertPosts($topic, $post_title, $content)

@@ -6,8 +6,9 @@
    <?php foreach ($stories as $story) { ?>
    <article>
    
-       <h1><a href="../php/full_article.php"><?php echo $story["posttitle"]?></a></h1>
-       <p><?php echo $story['story'] ?></p>
+    <a href="../php/post.php?postitle=<?php echo $story['posttitle'] ?>"><?php echo $story['posttitle'] ?></a>
+    <p><?php echo $story['content'] ?></p>
+    
        
    </article>
   </aside>

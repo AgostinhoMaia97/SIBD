@@ -24,13 +24,8 @@ session_start();
       <td><textarea type="text" placeholder ="Topic" name = "topic"></textarea></td>
     </tr>
     
-    <tr>
-      <td>Preview</td>
-      <td><textarea type="text" placeholder ="Preview" name = "preview"></textarea></td>
-    </tr>
-    <tr>
       <td>Post Story</td>
-      <td><textarea type="text" placeholder ="Story" name = "content"></textarea></td>
+      <td><textarea type="text" placeholder ="Content" name = "content"></textarea></td>
     </tr>
     
     <tr>

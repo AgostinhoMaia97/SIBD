@@ -2,12 +2,10 @@
             <h2> Latest news from our networking forum!  </h2>
             
         <ul>
-        <!--?php foreach ($articles as $article){ ?-->
-            <li><a href="#">SDN</a></li>
-            <!--li><a href="list_posts_by_topic.php?topic_name=<?//php echo article["topic_name"]?>">SDN</a></li>
-            <li><a href="list_posts_by_topic.php?topic_name=<?php// echo article["topic_name"]?>">VPN</a></li>
-            <li><a href="list_posts_by_topic.php?topic_name=<?php// echo article["topic_name"]?>">Wireless</a></li-->
-        <!--?php } ? -->
+            <li><a href="../php/list_by_topic.php?topic=SDN">SDN</a></li>
+            <li><a href="../php/list_by_topic.php?topic=Wireless">Wireless</a></li>
+            <li><a href="../php/list_by_topic.php?topic=VPN">VPN</a></li>
+        
         </ul>
  
 </nav>

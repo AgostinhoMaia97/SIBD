@@ -26,7 +26,17 @@ create table forumpost (
     forumpostcollection_id integer REFERENCES collection
     );
 
-
+ UPDATE forumpost
+SET
+      postrate = (SELECT postevaluation.number 
+                            FROM postevaluation
+                            WHERE postevaluation.postid = forumpost.postid )
+WHERE
+    EXISTS (
+        SELECT *
+        FROM postevaluation
+        WHERE postevaluation.postid = forumpost.postid
+    );
 
 drop table if exists postevaluation;
 

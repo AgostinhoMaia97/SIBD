@@ -62,6 +62,19 @@ function insertPostEvaluation($postid, $rating)
   
   $stmt = $dbh->prepare('INSERT INTO postevaluation (username, postid, number) VALUES (?, ?, ?)');
   $stmt->execute(array($_SESSION["username"],$postid, $rating));
+  
+  
+  $stmt = $dbh -> prepare( 'UPDATE forumpost
+  SET
+        postrate = (SELECT AVG(number) FROM postevaluation
+                              WHERE postevaluation.postid = forumpost.postid )
+  WHERE
+      EXISTS (
+          SELECT *
+          FROM postevaluation
+          WHERE postevaluation.postid = forumpost.postid
+      )');
+  $stmt->execute();
 
 }
 
@@ -72,6 +85,7 @@ function getPostRate($postid)
     
     $stmt = $dbh->prepare('SELECT postid, AVG(number) AS rating from postevaluation where postid = ?');
     $stmt->execute(array($postid));
+
     return $stmt->fetch();
 
 }

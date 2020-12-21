@@ -1,6 +1,7 @@
 <?php
     require_once("../database/init.php");
     require_once("../database/posts.php");
+    require_once("../database/comments.php");
     include_once("../templates/homepage_section/header_pagina_inicial_tpl.php");
     
 ?>
@@ -9,7 +10,8 @@
 <article>
 <aside id="related">
 
- <?php 
+ <?php
+    $postid = $_GET["postid"];
     $topic = $_GET["topic"]; 
     
  ?>
@@ -18,10 +20,9 @@
  
  <?php foreach ($articles as $article) { ?>
         <article>
-        
-            <h1><a href="../php/post.php?postitle=<?php echo $article['posttitle'] ?>"><?php echo $article["posttitle"]?></a></h1>
-            <p><?php echo $article["content"] ?></p>
-            
+            <a href="../php/post.php?postid=<?php echo $article['postid'] ?>"><?php echo $article['posttitle'] ?></a>
+            <p><?php echo $article['content'] ?></p>
+            <p>Total Comments: <a href="../php/post.php?postitle=<?php echo $article['posttitle'] ?>&postid=<?php echo $article['postid']?>"> <?php print_r("99 coments") ?></a>
         </article>
        </aside>
  <?php  } ?>

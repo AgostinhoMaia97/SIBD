@@ -3,24 +3,24 @@ require_once("../database/init.php");
 require_once("../database/comments.php");
 ?>
 
-
-
 <section id="comments">
   <h1><?=count($comments)?> Comment<?=count($comments)==1?'':'s'?></h1>
   <?php foreach ($comments as $comment) { ?>
     <article class="comment">
       <span class="user"><?=$comment["username"] ?>:"</span>
-      <span><?=$comment["content"]?>"</span>
+      <span><?=$comment["content"]?>"</span> 
+      <span class="date"><?= $comment['published'] ;?></span>
+
       <?php if (isset($_SESSION["username"])) { ?>
-      <div class = "comment-rate">
-            Rate this comment:
-        <?php foreach(range(1,5) as $rating) { ?>
-            <a href="../php/commentrate.php?commentrate=<?php echo $rating ?>&commentid=<?php echo $comment["commentid"] ?>"> <?php echo $rating; ?> </a>
+        <div class = "comment-rate">
+              Rate this comment:
+          <?php foreach(range(1,5) as $rating) { ?>
+              <a href="../php/commentrate.php?commentrate=<?php echo $rating ?>&commentid=<?php echo $comment["commentid"] ?>"> <?php echo $rating; ?> </a>
         <?php  } } ?>
 
         <p> CommentRate: <?php $averagerate = getCommentRate($comment["commentid"]); echo($averagerate["rating"]);  ?> </p> 
 
-      
+        
     </article>
   <?php } ?>
   

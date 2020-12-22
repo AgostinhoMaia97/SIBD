@@ -1,10 +1,10 @@
 <?php
-session_start();
+
 
 function getAllPosts() 
 {
   global $dbh;
-  $stmt = $dbh->prepare('SELECT * FROM forumpost');
+  $stmt = $dbh->prepare('SELECT * FROM forumpost ORDER BY published DESC');
   $stmt->execute();
   return $stmt->fetchAll();
 }
@@ -22,7 +22,8 @@ function getPostsByTopic($topic)
 {
 
   global $dbh;
-  $stmt = $dbh->prepare('SELECT postid, posttitle,content,topic FROM forumpost  WHERE topic = ?');
+  $stmt = $dbh->prepare('SELECT postid, posttitle,content,topic, published, postrate FROM forumpost  
+                          WHERE topic = ? ORDER BY published DESC');
   $stmt->execute(array($topic));
   return $stmt->fetchAll();
 }
@@ -37,12 +38,12 @@ function getPostbyTitle($title)
 
 }
 
-function insertPosts($topic, $post_title, $content)
+function insertPosts($topic, $post_title, $content, $published)
 {
     
     global $dbh;
-    $stmt = $dbh->prepare('INSERT INTO forumpost (topic, posttitle, content, username) VALUES (?, ?, ?, ?)');
-    $stmt->execute(array($topic, $post_title, $content, $_SESSION["username"]));
+    $stmt = $dbh->prepare('INSERT INTO forumpost (topic, posttitle, content, username, published) VALUES (?, ?, ?, ?, ?)');
+    $stmt->execute(array($topic, $post_title, $content, $_SESSION["username"], $published));
     echo('Success!<br><a href="../php/add_post.php">Click here</a> to add more news.<br><a href="../php/initialpage.php">Click here</a> to return to the main page.');
 }
 

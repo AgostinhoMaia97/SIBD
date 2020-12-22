@@ -37,14 +37,15 @@ create table forumpost (
     posttitle text NOT NULL,
     content text CHECK(LENGTH(content)>= 0 AND LENGTH(content)<20000),
     username text REFERENCES user, 
+    published INTEGER, -- date when the article was published in epoch format
     topic text REFERENCES topic, 
     postrate integer CHECK(postrate>=0 AND postrate <=5)
    -- forumpostcollection_id integer REFERENCES collection
     );
 
-INSERT into forumpost(postid, posttitle, username, topic) VALUES (NULL, "SDN rocking!", "maia77", "SDN");
-INSERT into forumpost(postid, posttitle, username, topic) VALUES (NULL, "VPN rocking!", "maia77", "VPN");
-INSERT into forumpost(postid, posttitle, username, topic) VALUES (NULL, "Wireless rocking!", "maia77", "Wireless");
+INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "SDN rocking!", "maia77", "2020-11-11", "SDN");
+INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "VPN rocking!", "maia77", "2020-11-12", "VPN");
+INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "Wireless rocking!", "maia77", "2018-11-11", "Wireless");
 
 
 
@@ -70,6 +71,7 @@ create table comment(
     username text REFERENCES user,
     postid integer REFERENCES forumpost NOT NULL,
     content text CHECK(LENGTH(content)>0 AND LENGTH(content)<1000),
+    published INTEGER, -- date when news item was published in epoch format
     commentrate integer CHECK(commentrate>=0 AND commentrate <=5)
 
 );

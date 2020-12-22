@@ -10,7 +10,7 @@ $postid = $_POST["postid"];
 $username = $_SESSION["username"];
 
 insertCommentsInPost($postid, $content, $username);
-header("location:" . $_SERVER['HTTP_REFERER']);
+//header("location:" . $_SERVER['HTTP_REFERER']);
 
 
 ?>

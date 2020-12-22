@@ -11,7 +11,7 @@ $username = $_SESSION["username"];
 $published = date('Y-m-d H:i:s', time());
 
 insertCommentsInPost($postid, $content, $username, $published);
-//header("location:" . $_SERVER['HTTP_REFERER']);
+header("location:" . $_SERVER['HTTP_REFERER']);
 
 
 ?>

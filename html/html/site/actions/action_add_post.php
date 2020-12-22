@@ -8,8 +8,8 @@
     $post_title = $_POST["posttitle"];
     $content = $_POST["content"];
     //$preview = $_POST["preview"];
-
+    $published = date('Y-m-d H:i:s', time());
     
-    insertPosts($topic, $post_title, $content);
+    insertPosts($topic, $post_title, $content, $published);
     
 ?>

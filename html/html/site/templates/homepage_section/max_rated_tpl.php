@@ -1,4 +1,4 @@
-<aside id="related">
+<aside id="maxrated">
         <h1> MAX RATED POSTS</h1>
         <article>
           <h2><a href="#">Duis arcu purus</a></h1>

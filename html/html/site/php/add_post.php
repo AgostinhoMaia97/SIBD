@@ -19,7 +19,11 @@ session_start();
 
     <tr>
       <td>Topic</td>
-      <td><textarea type="text" placeholder ="Topic" name = "topic"></textarea></td>
+      <td> <input type="radio" value ="SDN" name = "topic"> SDN</td>
+      <td> <input type="radio" value ="VPN" name = "topic"> VPN</td>
+      <td> <input type="radio" value ="Wireless" name = "topic"> WIRELESS</td>
+
+
     </tr>
     
       <td>Post Story</td>

@@ -12,7 +12,7 @@ require_once("../database/comments.php");
     <a href="../php/post.php?postid=<?php echo $story['postid'] ?>"><?php echo $story['posttitle'] ?></a>
     <p><?php echo $story['content'] ?></p>
     
-    <p class="date"><?= $story['published'] ;?></p>
+    <p class="date"> Date: <?= $story['published'] ;?></p>
     
     <?php $numbOfComments = getTotalOfCommentsOnPost($story['postid']); ?>
     <p>Total Comments: <a href="../php/post.php?postitle=<?php echo $story['posttitle'] ?>&postid=<?php echo $story['postid']?>"> 

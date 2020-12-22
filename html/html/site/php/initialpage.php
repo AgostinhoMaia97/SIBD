@@ -7,8 +7,11 @@
   include_once("../templates/homepage_section/header_pagina_inicial_tpl.php");
   include_once("../templates/homepage_section/topics_tpl.php");
   
+  //$lastMonday = date("Y-m-d", strtotime('monday last week'));
+  //$lastSunday = date("Y-m-d", strtotime('sunday last week'));
   $stories = getAllPosts();
- 
+  $maxrates = getPostsWithBestRating();
+  
   include_once("../templates/homepage_section/max_rated_tpl.php");
   include_once("../templates/homepage_section/most_recent_posts_tpl.php");
   include_once("../templates/static_sections/footer_tpl.php");

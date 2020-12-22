@@ -15,7 +15,7 @@
     $topic = $_GET["topic"]; 
     
  ?>
- <h1> <?php echo $topic;?> </h1>
+ <h1> Search For Posts with Topic: <?php echo $topic;?> </h1>
  <?php $articles = getPostsByTopic($topic); ?>
  
  <?php foreach ($articles as $article) { ?>

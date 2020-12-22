@@ -1,6 +1,5 @@
 <?php
 
-
 function getAllPosts() 
 {
   global $dbh;
@@ -13,7 +12,7 @@ function getPostbyID($postid)
 {
    
   global $dbh;
-   $stmt = $dbh->prepare('SELECT posttitle, content, username from forumpost where postid = ?');
+   $stmt = $dbh->prepare('SELECT posttitle, content, username,published from forumpost where postid = ?');
    $stmt->execute(array($postid));
    return $stmt->fetch();
 
@@ -99,4 +98,15 @@ function CheckifPostRated($postid)
   $stmt->execute(array($postid, $_SESSION["username"]));
   return $stmt->fetch();
   
+}
+
+function getPostsWithBestRating() {
+
+  global $dbh;
+    
+  $stmt = $dbh->prepare('SELECT *  FROM forumpost ORDER BY forumpost.postrate DESC LIMIT 3');
+  $stmt->execute();
+  return $stmt->fetchAll();
+
+
 }

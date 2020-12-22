@@ -1,15 +1,12 @@
 <aside id="maxrated">
         <h1> MAX RATED POSTS</h1>
         <article>
-          <h2><a href="#">Duis arcu purus</a></h1>
-          <p>Etiam mattis convallis orci eu malesuada. Donec odio ex, facilisis ac blandit vel, placerat ut lorem. Ut id sodales purus. Sed ut ex sit amet nisi ultricies malesuada. Phasellus magna diam, molestie nec quam a, suscipit finibus dui. Phasellus a.</p>
+            <?php foreach($maxrates as $maxrated) {  ?>
+              <p><a href="../php/post.php?postid=<?php echo $maxrated['postid'] ?>">
+              <?php echo $maxrated['posttitle'] ?></a></p>
+              <p>Post Rate = <?php echo $maxrated['postrate']  ?></p>
+              
+            <?php  } ?>
         </article>        
-        <article>
-          <h1><a href="#">Sed efficitur interdum</a></h1>
-          <p>Integer massa enim, porttitor vitae iaculis id, consequat a tellus. Aliquam sed nibh fringilla, pulvinar neque eu, varius erat. Nam id ornare nunc. Pellentesque varius ipsum vitae lacus ultricies, a dapibus turpis tristique. Sed vehicula tincidunt justo, vitae varius arcu.</p>
-        </article>
-        <article>
-          <h1><a href="#">Vestibulum congue blandit</a></h1>
-          <p>Proin lectus felis, fringilla nec magna ut, vestibulum volutpat elit. Suspendisse in quam sed tellus fringilla luctus quis non sem. Aenean varius molestie justo, nec tincidunt massa congue vel. Sed tincidunt interdum laoreet. Vivamus vel odio bibendum, tempus metus vel.</p>
-        </article>
+          
 </aside> 

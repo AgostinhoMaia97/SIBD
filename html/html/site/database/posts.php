@@ -89,3 +89,13 @@ function getPostRate($postid)
     return $stmt->fetch();
 
 }
+
+function CheckifPostRated($postid)
+{
+  global $dbh;
+    
+  $stmt = $dbh->prepare('SELECT number from postevaluation where postid = ? AND username = ?');
+  $stmt->execute(array($postid, $_SESSION["username"]));
+  return $stmt->fetch();
+  
+}

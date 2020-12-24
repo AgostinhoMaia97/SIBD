@@ -39,15 +39,14 @@
             
             <a href="../php/FAQ.php">FAQ</a>
             <a href="../php/contacts.php">Contacts</a>
-            <a href="../php/aboutUs.html">About Us</a> <br> <br>
+            <a href="../php/aboutUs.php">About Us</a> <br> <br>
 
             <?php if (isset($_SESSION["username"])) { ?>
                 <a href="add_post.php"> Add Post </a>
-                <a href="honoraverage.php"> HonorAverage </a>
-                <a href="userhistory.php">  CommentHistory </a>
-                <a href="postcollection.php"> PostCollection </a>
-
-            
+                <a href="honoraverage.php"> Honor Average </a>
+                <a href="userhistory.php">  Comment History </a>
+                <a href="createcollection.php"> Create Post Collection </a>
+                <a href="postcollection.php"> Check your Post Collection </a>
             <?php } ?>
         </div>
 

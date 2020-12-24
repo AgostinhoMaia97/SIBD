@@ -3,40 +3,30 @@
     require_once("../database/posts.php");
     require_once("../database/comments.php");
     include_once("../templates/homepage_section/header_pagina_inicial_tpl.php");
+
     
-?>
-
-<section id="posts">
-<article>
-<aside id="related">
-
- <?php
-    $postid = $_GET["postid"];
     $topic = $_GET["topic"]; 
+    $n_posts = getNumberOfPostsByTopic($topic);
+    $n_pages = ceil($n_posts/2);
+
+    if(isset($_GET["page"])){
+      $page = $_GET["page"];
+        
+        if($page < 1){
+          $page = 1;
+        }
+        if($page > $n_pages){
+          $page = $n_pages;
+        }
+    } else{
+        $page = 1;
+    }
     
- ?>
- <h1> <?php echo $topic;?> </h1>
- <?php $articles = getPostsByTopic($topic); ?>
- 
- <?php foreach ($articles as $article) { ?>
-        <article>
-            <a href="../php/post.php?postid=<?php echo $article['postid'] ?>"><?php echo $article['posttitle'] ?></a>
-            <p><?php echo $article['content'] ?></p>
-
-            <p class="date"><?= $article['published'] ;?></p>
-
-            <?php $numbOfComments = getTotalOfCommentsOnPost($article['postid']); ?>
-            <p>Total Comments: <a href="../php/post.php?postitle=<?php echo $article['posttitle'] ?>&postid=<?php echo $article['postid']?>"> 
-            <?php echo $numbOfComments; ?></a>
-
-            <p>Post rate: <?php echo number_format($article["postrate"], 2, '.', ''); ?></p> 
-
-        </article>
-       </aside>
- <?php  } ?>
-
- <?php
-include_once("../templates/static_sections/footer_tpl.php");
+    $articles = getPostsByTopic($topic, $page); 
+    $postid = $_GET["postid"];
+    
+    include_once("../templates/homepage_section/list_by_topic_tpl.php");
+    include_once("../templates/static_sections/footer_tpl.php");
  ?>
 
 

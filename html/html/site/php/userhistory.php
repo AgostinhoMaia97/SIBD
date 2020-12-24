@@ -3,9 +3,7 @@ session_start();
 require_once("../database/init.php");
 require_once("../database/user.php");
 
-
 $idofpostscommentedbyUser = IDofpostscommentedbyUser($_SESSION["username"]);
-
 
 ?>
 
@@ -22,6 +20,3 @@ $idofpostscommentedbyUser = IDofpostscommentedbyUser($_SESSION["username"]);
 
 
 </section>
-
-
-

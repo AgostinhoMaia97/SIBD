@@ -4,9 +4,6 @@ require_once("../database/init.php");
 require_once("../database/posts.php");
 require_once("../database/user.php");
 
-
-
-
 $postid= $_GET['postid'];
 $rating = $_GET['rating'];
 

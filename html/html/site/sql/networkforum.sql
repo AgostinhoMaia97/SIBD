@@ -93,6 +93,7 @@ drop table if exists collection;
 
 create table collection (
     collectionid integer PRIMARY KEY AUTOINCREMENT,
+    name text not null,
     username text references user
 );
 
@@ -104,4 +105,3 @@ create table postcollection(
  forumpostid integer not null REFERENCES forumpost,
 PRIMARY KEY(collectionid, forumpostid)  
 );
-

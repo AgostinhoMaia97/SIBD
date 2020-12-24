@@ -1,12 +1,10 @@
-<?php
+<?php 
 
 session_start();
-require_once("../database/init.php");
-require_once("../database/user.php");
+include("../database/init.php");
+include("../database/collection.php");
 
 $postid = $_POST["postid"];
-
-
 
 
 

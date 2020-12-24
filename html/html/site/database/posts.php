@@ -1,10 +1,10 @@
 <?php
 
-function getAllPosts() 
+function getAllPosts($page) 
 {
   global $dbh;
-  $stmt = $dbh->prepare('SELECT * FROM forumpost ORDER BY published DESC');
-  $stmt->execute();
+  $stmt = $dbh->prepare('SELECT * FROM forumpost ORDER BY published DESC LIMIT ? OFFSET ?');
+  $stmt->execute(array(3, ($page-1)*3));
   return $stmt->fetchAll();
 }
 
@@ -17,13 +17,13 @@ function getPostbyID($postid)
    return $stmt->fetch();
 
 }
-function getPostsByTopic($topic)
+function getPostsByTopic($topic, $page)
 {
 
   global $dbh;
   $stmt = $dbh->prepare('SELECT postid, posttitle,content,topic, published, postrate FROM forumpost  
-                          WHERE topic = ? ORDER BY published DESC');
-  $stmt->execute(array($topic));
+                          WHERE topic = ? ORDER BY published DESC LIMIT ? OFFSET ?');
+  $stmt->execute(array($topic, 2, ($page-1)*2));
   return $stmt->fetchAll();
 }
 
@@ -109,4 +109,19 @@ function getPostsWithBestRating() {
   return $stmt->fetchAll();
 
 
+}
+
+function getNumberOfPosts(){
+  global $dbh;
+  $stmt = $dbh->prepare("SELECT COUNT(*) as count FROM forumpost");
+  $stmt->execute();
+  return $stmt->fetch()['count'];
+
+}
+
+function getNumberOfPostsByTopic($topic){
+  global $dbh;
+  $stmt = $dbh->prepare("SELECT COUNT(*) as TopicCounter FROM forumpost WHERE topic = ?");
+  $stmt->execute(array($topic));
+  return $stmt->fetch()['TopicCounter'];
 }

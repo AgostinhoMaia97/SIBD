@@ -1,6 +1,5 @@
 PRAGMA foreign_keys = ON;
 
-
 drop table if exists user;
 
 create table user (
@@ -9,9 +8,8 @@ create table user (
     lastname text NOT NULL,
     age integer CHECK(age>10 AND age<120),
     pwd text NOT NULL, 
-    email text NOT NULL,
-    honoraverage integer CHECK(honoraverage>= 0 AND honoraverage<=5),
-    totalnumberofrates integer CHECK(totalnumberofrates>=0)
+    email text NOT NULL
+  
 );
 
 INSERT into user(username, firstname, lastname, age, pwd, email) VALUES ("maia77", "filipe", "maia", 23, "434235faa527ab5af15d3efd77212c4b064d852a", "filipemaia@gmail.com");
@@ -40,7 +38,6 @@ create table forumpost (
     published INTEGER, -- date when the article was published in epoch format
     topic text REFERENCES topic, 
     postrate integer CHECK(postrate>=0 AND postrate <=5)
-   -- forumpostcollection_id integer REFERENCES collection
     );
 
 INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "SDN rocking!", "maia77", "2020-11-11", "SDN");
@@ -95,27 +92,15 @@ create table commenthistory(
 drop table if exists collection;
 
 create table collection (
-    collectionid integer PRIMARY KEY,
+    collectionid integer PRIMARY KEY AUTOINCREMENT,
     username text references user
 );
 
 
-drop table if exists keyword;
+drop table if exists postcollection;
 
-create table keyword(
-    name text PRIMARY KEY
-);
-
-drop table if exists keywordgroup;
-
-create table keywordgroup(
-    name text PRIMARY KEY
-);
-
-drop table if exists postkeygroup;
-
-create table postkeygroup(
-    postid text REFERENCES forumpost,
-    keywordname text REFERENCES keyword,
-    groupname text REFERENCES keywordgroup
+create table postcollection(
+ collectionid integer not null references collection,
+ forumpostid integer not null REFERENCES forumpost,
+PRIMARY KEY(collectionid, forumpostid)  
 );

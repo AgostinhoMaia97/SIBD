@@ -2,6 +2,7 @@
 session_start();
 require_once("../database/init.php");
 require_once("../database/comments.php");
+require_once("../database/user.php");
 
 
 $commentid= $_GET['commentid'];

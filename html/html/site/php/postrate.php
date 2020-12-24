@@ -2,6 +2,9 @@
 session_start();
 require_once("../database/init.php");
 require_once("../database/posts.php");
+require_once("../database/user.php");
+
+
 
 
 $postid= $_GET['postid'];
@@ -17,6 +20,7 @@ if ($rated["number"] == NULL)
     </form>
     <?php
         insertPostEvaluation($postid, $rating);
+        //updateHonorAverage($_SESSION["username"]);
 }
 
 

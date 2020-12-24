@@ -23,6 +23,12 @@ $comments = getCommentsByPostId($postid);
         <?php  } } ?>
 
     <p> PostRate: <?php echo $postrate["rating"];?> </p>
+    <?php if (isset($_SESSION["username"])) { ?>
+    <form name = "collectpost" method = "post" action = "../actions/action_collectpost.php">
+    <input type="hidden" name="postid" value="<?php echo $postid?>">
+    <button type="submit" formaction="../php/initialpage.php">Add post to collection!</button>
+    </form>
+    <?php } ?>
 
 <?php
 include_once("../templates/comments/list_comments_tpl.php"); 

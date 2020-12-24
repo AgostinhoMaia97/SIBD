@@ -43,6 +43,11 @@
 
             <?php if (isset($_SESSION["username"])) { ?>
                 <a href="add_post.php"> Add Post </a>
+                <a href="honoraverage.php"> HonorAverage </a>
+                <a href="userhistory.php">  CommentHistory </a>
+                <a href="postcollection.php"> PostCollection </a>
+
+            
             <?php } ?>
         </div>
 

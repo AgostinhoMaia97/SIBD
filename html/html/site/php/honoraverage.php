@@ -20,8 +20,5 @@ $usercommentrate = getUserCommentRate($_SESSION["username"]);
 <body>
     <p> Currently your honor average is <?php echo (($userpostrate["userpostrate"] + $usercommentrate["usercommentrate"])/2); ?>
 
-
-
-
 </body>
 </html>

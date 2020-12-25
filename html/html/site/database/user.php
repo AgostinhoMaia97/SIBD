@@ -55,4 +55,9 @@ function IDofpostscommentedbyUser($username)
 
 }
 
+function saveProfilePic($username){
+    move_uploaded_file($_FILES['pic']['tmp_name'], "../images/users/$username.jpg");
+
+}
+
 ?>

@@ -34,5 +34,31 @@ function checkifCollectionalreadycreated($username)
     return $stmt->fetch();
 }
 
+function findUserCollectionID($username)
+{
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT collectionid from collection where username = ?');
+    $stmt->execute(array($username));
+    return $stmt->fetch();
+
+}
+
+function getAllPostsfromCollection($collectionid)
+{
+    global $dbh;
+    $stmt = $dbh->prepare('select forumpostid from postcollection where collectionid = ?');
+    $stmt->execute(array($collectionid));
+    return $stmt->fetchall();
+
+}
+
+function checkIfPostAlreadyAdded($postid, $collectionid)
+{
+    global $dbh;
+    $stmt = $dbh->prepare('select forumpostid from postcollection where forumpostid = ? AND collectionid = ?');
+    $stmt->execute(array($postid, $collectionid));
+    return $stmt->fetchall();
+
+}
  
 ?>

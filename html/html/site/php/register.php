@@ -20,7 +20,7 @@ unset($_SESSION["msg"]);
 
     <section id="registration">
    <h2>Register</h2>
-    <form action='../actions/action_register.php' method = 'post'>
+    <form action='../actions/action_register.php' method = 'post' enctype = "multipart/form-data">
 
      <label>
          Username: <input type="text" name="username">
@@ -34,6 +34,7 @@ unset($_SESSION["msg"]);
         Last Name: <input type="text" name="lastname">
     </label>
 
+    
 
     <label>
         Age: <input type="number" name="age">
@@ -46,6 +47,8 @@ unset($_SESSION["msg"]);
     <label>
         Password: <input type="password" name="password">
     </label>
+    <p></p>
+    <input type="file" name = "pic">
     <input type="submit" value="SIGN UP">
 
     </form>

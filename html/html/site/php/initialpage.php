@@ -3,12 +3,11 @@
   require_once("../database/init.php");
   require_once("../database/posts.php");
   require_once("../database/comments.php");
+  require_once("../database/collection.php");
+
 
   include_once("../templates/homepage_section/header_pagina_inicial_tpl.php");
   include_once("../templates/homepage_section/topics_tpl.php");
-  
-  //$lastMonday = date("Y-m-d", strtotime('monday last week'));
-  //$lastSunday = date("Y-m-d", strtotime('sunday last week'));
   
   $n_posts = getNumberOfPosts();
   $n_pages = ceil($n_posts/3);
@@ -25,7 +24,7 @@
     } else{
         $page = 1;
     }
-    
+
     $stories = getAllPosts($page);
     $maxrates = getPostsWithBestRating();
   

@@ -1,6 +1,6 @@
 <?php
-
 require_once('../database/init.php');
+require_once("../database/user.php");
 session_start();
 
 
@@ -41,6 +41,7 @@ if(strlen($password) < 8)
 
 try {
     insertUser($username, $firstname, $lastname, $age, $email, $password);
+    saveProfilePic($username);
     $_SESSION["msg"] = "Registration successful!";
     header("Location: ../php/initialpage.php");
 

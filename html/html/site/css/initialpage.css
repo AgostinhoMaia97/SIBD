@@ -81,3 +81,9 @@ footer a {
   flex-direction: row;
   flex: 1;
 }
+
+#profilePic {
+  width: 3em;
+  margin-right: 1em;
+  border-radius: 1em;
+}

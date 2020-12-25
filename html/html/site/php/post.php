@@ -1,11 +1,13 @@
 <?php 
 session_start();
+
 require_once("../database/init.php");
 require_once("../database/posts.php");
 require_once("../database/comments.php");
+require_once("../database/collection.php");
 include_once("../templates/homepage_section/header_pagina_inicial_tpl.php");
 
-$postid= $_GET['postid'];
+$postid = $_GET['postid'];
 $result = getPostbyID($postid);
 $postrate = getPostRate($postid);
 $comments = getCommentsByPostId($postid);
@@ -29,10 +31,12 @@ $comments = getCommentsByPostId($postid);
         <?php  } } ?>
 
     <p> PostRate: <?php echo $postrate["rating"];?> </p>
-    <?php if (isset($_SESSION["username"])) { ?>
+
+    <?php if (isset($_SESSION["username"]) && (findUserCollectionID($_SESSION["username"])["collectionid"] != NULL) && checkIfPostAlreadyAdded($postid, findUserCollectionID($_SESSION["username"])["collectionid"]) == NULL)   { ?>
     <form name = "collectpost" method = "post" action = "../actions/action_collectpost.php">
     <input type="hidden" name="postid" value="<?php echo $postid?>">
-    <button type="submit" formaction="../php/initialpage.php">Add post to collection!</button>
+    <button type="submit" >Add post to collection!</button> 
+
     </form>
     <?php } ?>
 

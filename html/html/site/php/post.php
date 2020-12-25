@@ -1,11 +1,12 @@
 <?php 
 session_start();
+
 require_once("../database/init.php");
 require_once("../database/posts.php");
 require_once("../database/comments.php");
 include_once("../templates/homepage_section/header_pagina_inicial_tpl.php");
 
-$postid= $_GET['postid'];
+$postid = $_GET['postid'];
 $result = getPostbyID($postid);
 $postrate = getPostRate($postid);
 $comments = getCommentsByPostId($postid);
@@ -29,6 +30,7 @@ $comments = getCommentsByPostId($postid);
         <?php  } } ?>
 
     <p> PostRate: <?php echo $postrate["rating"];?> </p>
+
     <?php if (isset($_SESSION["username"])) { ?>
     <form name = "collectpost" method = "post" action = "../actions/action_collectpost.php">
     <input type="hidden" name="postid" value="<?php echo $postid?>">

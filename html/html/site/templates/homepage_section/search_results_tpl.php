@@ -2,20 +2,10 @@
 require_once("../database/comments.php"); 
 require_once("../database/posts.php");
 ?>
-
 <section id="posts">
-
-  <form id="search" action="../php/list_search_results.php">
-    <input type="text" name="posttitle" placeholder="Forum Post Title">
-    <input type="date" name="published" placeholder="Date of Post">
-    <input type="text" name="minPostRate" placeholder="Minimum Post Rate">
-    <input type="text" name="maxPostRate" placeholder="Maximum Post Rate">
-    <input type="submit" value="Search">
-  </form>
-
-  <article>
+<article>
   <aside id="related">
-   <h1> Most Recent Posts</h1>
+   <h1> Search Results:</h1>
    <?php foreach ($stories as $story) { ?>
    <article>
    
@@ -33,8 +23,3 @@ require_once("../database/posts.php");
   </aside>
 <?php  } ?>
 
-  <div id="pagination">
-      <a href="../php/initialpage.php?page=<?php echo $page-1; ?>">&lt;</a>
-        <?php echo $page ?>
-      <a href="../php/initialpage.php?page=<?php echo $page+1; ?>">&gt;</a>
-  </div>

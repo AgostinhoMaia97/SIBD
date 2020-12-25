@@ -35,7 +35,7 @@ create table forumpost (
     posttitle text NOT NULL,
     content text CHECK(LENGTH(content)>= 0 AND LENGTH(content)<20000),
     username text REFERENCES user, 
-    published INTEGER, -- date when the article was published in epoch format
+    published INTEGER, 
     topic text REFERENCES topic, 
     postrate integer CHECK(postrate>=0 AND postrate <=5)
     );

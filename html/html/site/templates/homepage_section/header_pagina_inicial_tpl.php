@@ -20,12 +20,13 @@
 
         <h1> FEUP Networking Forum </h1>
         <div id="signup">
-            
+          <img id = "profilePic" src="../images/users/<?php echo $_SESSION["username"] ?>.jpg" alt="profilepic">
             <a href="register.php">Register</a>
             <?php if (!isset($_SESSION["username"])) { ?>
             <a href="login.php">Login</a>
             <?php } else { ?>
               <form action="../actions/action_logout.php">
+                
                 <span> <?php echo $_SESSION["username"]; ?> </span>
                 <input type="submit" value="Logout">
               </form>

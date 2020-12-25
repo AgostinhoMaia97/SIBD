@@ -125,3 +125,32 @@ function getNumberOfPostsByTopic($topic){
   $stmt->execute(array($topic));
   return $stmt->fetch()['TopicCounter'];
 }
+
+function getPostsBySearch($title, $date, $minPostRate, $maxPostRate){
+  global $dbh;
+  $query = "SELECT * FROM forumpost WHERE published != ? ";
+  $params = array(0);
+
+    if($title != ''){
+        $query = $query . " AND posttitle LIKE ?";
+        $params[] = "%$title%";
+    }
+    if($date != ''){
+        $query = $query . " AND published LIKE ?";
+        $params[] = "%$date%";
+    }
+    if($minPostRate != ''){
+        $query = $query . " AND postrate >= ?";
+        $params[] = $minPostRate;
+    }
+    if($maxPostRate != ''){
+      $query = $query . " AND postrate <= ?";
+      $params[] = $maxPostRate;
+  }
+  $query = $query . " ORDER BY published DESC";
+  
+  $stmt = $dbh->prepare($query);
+  $stmt->execute($params);
+  return $stmt->fetchAll();
+
+}

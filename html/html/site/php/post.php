@@ -35,12 +35,17 @@ $comments = getCommentsByPostId($postid);
 
     <?php if (isset($_SESSION["username"]) && (findUserCollectionID($_SESSION["username"])["collectionid"] != NULL) && checkIfPostAlreadyAdded($postid, findUserCollectionID($_SESSION["username"])["collectionid"]) == NULL)   { ?>
     <form name = "collectpost" method = "post" action = "../actions/action_collectpost.php">
-    <input type="hidden" name="postid" value="<?php echo $postid?>">
-    <button type="submit" >Add post to collection!</button> 
-
+        <input type="hidden" name="postid" value="<?php echo $postid?>">
+        <button type="submit" >Add post to collection!</button> 
     </form>
     <?php } ?>
     
+    <?php if($_SESSION["username"] == $result["username"]){ ?>
+        <form name = "deletepost" method = "post" action="../actions/action_delete_post.php">
+            <input type="hidden" name ="postid" value = "<?php echo $postid?>">
+            <button type = "submit">Delete Forum Post</button>
+        </form>     
+    <?php } ?>
 <?php
 include_once("../templates/comments/list_comments_tpl.php"); 
 include_once("../templates/static_sections/footer_tpl.php"); 

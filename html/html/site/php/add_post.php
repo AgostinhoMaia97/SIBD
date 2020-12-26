@@ -14,20 +14,20 @@ session_start();
   <table width="50%" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td>Post Title</td>
-      <td><textarea type="text" placeholder="Title" name = "posttitle"></textarea></td>
+      <td><textarea type="text" placeholder="Title" name = "posttitle" required></textarea></td>
     </tr>
 
     <tr>
       <td>Topic</td>
-      <td> <input type="radio" value ="SDN" name = "topic"> SDN</td>
-      <td> <input type="radio" value ="VPN" name = "topic"> VPN</td>
-      <td> <input type="radio" value ="Wireless" name = "topic"> WIRELESS</td>
+      <td> <input type="radio" value ="SDN" name = "topic" required > SDN</td>
+      <td> <input type="radio" value ="VPN" name = "topic" required> VPN</td>
+      <td> <input type="radio" value ="Wireless" name = "topic" required> WIRELESS</td>
 
 
     </tr>
     
       <td>Post Story</td>
-      <td><textarea type="text" placeholder ="Content" name = "content"></textarea></td>
+      <td><textarea type="text" placeholder ="Content" name = "content" required></textarea></td>
     </tr>
     
     <tr>

@@ -14,10 +14,10 @@
     <form action="../actions/action_login.php" method="post">
         <h3>Log in</h3>
         <label>
-            User Name: <input type="text" name="username">
+            User Name: <input type="text" name="username" required>
         </label>
         <label>
-            Password: <input type="password" name="password">
+            Password: <input type="password" name="password" required>
         </label>
         <input type="submit" value="LOG IN">
     </form>

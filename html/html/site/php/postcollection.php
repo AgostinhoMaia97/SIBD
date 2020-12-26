@@ -20,16 +20,9 @@ $postcollection = getAllPostsfromCollection($usercollection["collectionid"]);
 <?php foreach($postcollection as $post) { ?>
 
 <a href="../php/post.php?postid=<?php echo $post["forumpostid"]?> "><?php echo (getTitlebyID($post["forumpostid"])["posttitle"]); ?> </a>
-
+<p></p>
 <?php } ?>
 
 <form>
       <input type="button" value="Go to initial page!" onclick=document.location.href="../php/initialpage.php" </input>
 </form>
-
-
-
-
-
-
-

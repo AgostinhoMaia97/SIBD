@@ -1,6 +1,7 @@
 <nav id = "headerID">
       <div class="website Logo" id ="signup">
         <h2>Networking Forum</h2>
+        
       </div>
       <ul>
         <li>

@@ -11,10 +11,10 @@ function getAllPosts($page)
 function getPostbyID($postid)
 {
    
-  global $dbh;
+   global $dbh;
    $stmt = $dbh->prepare('SELECT posttitle, content, username,published from forumpost where postid = ?');
    $stmt->execute(array($postid));
-   return $stmt->fetchall();
+   return $stmt->fetch();
 
 }
 function getPostsByTopic($topic, $page)
@@ -155,3 +155,18 @@ function getPostsBySearch($title, $date, $minPostRate, $maxPostRate){
 
 }
 
+function deletePostByID($postid){
+
+  global $dbh;
+  $stmt = $dbh->prepare('DELETE FROM forumpost WHERE postid = ?');
+  $stmt->execute(array($postid));
+  echo('Success!<br>Your post was removed!<br><a href="../php/initialpage.php">Click here</a> to return to the main page.');
+
+}
+
+function deleteCommentsOfPost($postid){
+  global $dbh;
+  $stmt = $dbh->prepare('DELETE FROM comment WHERE postid = ?');
+  $stmt->execute(array($postid));
+
+}

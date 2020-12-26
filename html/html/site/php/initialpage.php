@@ -4,8 +4,7 @@
   require_once("../database/posts.php");
   require_once("../database/comments.php");
   require_once("../database/collection.php");
-
-
+  
   include_once("../templates/homepage_section/header_pagina_inicial_tpl.php");
   include_once("../templates/homepage_section/topics_tpl.php");
   

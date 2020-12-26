@@ -14,7 +14,7 @@ session_start()
 
 <form action='../actions/action_createpost.php' method = 'post'>
     <label>
-         Collection name: <input type="text" name="name">
+         Collection name: <input type="text" name="name" required>
     </label>
     <?php  ?>
     <input type="submit" value="Create!">

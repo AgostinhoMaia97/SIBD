@@ -22,4 +22,3 @@ require_once("../database/posts.php");
    </article>
   </aside>
 <?php  } ?>
-

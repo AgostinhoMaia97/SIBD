@@ -4,7 +4,6 @@ $msg = $_SESSION["msg"];
 unset($_SESSION["msg"]);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,29 +22,27 @@ unset($_SESSION["msg"]);
     <form action='../actions/action_register.php' method = 'post' enctype = "multipart/form-data">
 
      <label>
-         Username: <input type="text" name="username">
+         Username: <input type="text" name="username" required>
      </label>
      
      <label>
-        First Name: <input type="text" name="firstname">
+        First Name: <input type="text" name="firstname" required>
     </label>
 
     <label>
-        Last Name: <input type="text" name="lastname">
-    </label>
-
-    
-
-    <label>
-        Age: <input type="number" name="age">
+        Last Name: <input type="text" name="lastname" required>
     </label>
 
     <label>
-        Email: <input type="text" name="email">
+        Age: <input type="number" name="age" required>
     </label>
 
     <label>
-        Password: <input type="password" name="password">
+        Email: <input type="text" name="email" required>
+    </label>
+
+    <label>
+        Password: <input type="password" name="password" required>
     </label>
     <p></p>
     <input type="file" name = "pic">

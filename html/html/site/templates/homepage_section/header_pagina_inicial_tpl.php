@@ -2,12 +2,13 @@
   session_start();
   $msg = $_SESSION["msg"];
   unset($_SESSION["msg"]);
-
+  require_once("../database/collection.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/initialpage.css" rel="stylesheet">
@@ -16,38 +17,59 @@
 
 </head>
 <body>
-    <header>
+<header>
+        <div id="menu-first">
+          <div class="otherPages">
+            <ul id = "listOtherPages">
+              <li><a href="initialpage.php"> Home </a></li>
+              
+              <li><a href="../php/FAQ.php">FAQ</a></li>
+              <li><a href="../php/contacts.php">Contacts</a></li>
+              <li><a href="../php/aboutUs.php">About Us</a></li> 
+          </ul> 
+          </div>
+        </div>
 
-        <h1> FEUP Networking Forum </h1>
-        <div id="signup">
-          <img id = "profilePic" src="../images/users/<?php echo $_SESSION["username"] ?>.jpg" alt="profilepic">
-            <a href="register.php">Register</a>
-            <?php if (!isset($_SESSION["username"])) { ?>
-            <a href="login.php">Login</a>
-            <?php } else { ?>
-              <form action="../actions/action_logout.php">
-                
-                <span> <?php echo $_SESSION["username"]; ?> </span>
-                <input type="submit" value="Logout">
+        <div id ="menu-signup">
+          <div class = "signup">
+            <?php if (isset($_SESSION["username"])) { ?>
+              <img id = "profilePic" src="../images/users/<?php echo $_SESSION["username"] ?>.jpg" alt="profilepic">
+            <?php } ?>
+            <ul id = "signupOptions">
+              <li><a href="register.php">Register</a></li>
+              
+              <?php if (!isset($_SESSION["username"])) { ?>
+                <li><a href="login.php">Login</a></li>
+              <?php } else { ?>
+                <form action="../actions/action_logout.php">
+                  
+                  <span> <?php echo $_SESSION["username"]; ?> </span>
+                  <li><input type="submit" value="Logout">
               </form>
             
             <?php } ?>
             <span> <?php echo $msg ?> </span>
-
+            </ul>
+          </div>
         </div>
-        <div id="otherpages">
-            <a href="initialpage.php"> Home </a>
+        
+        
+        <div id ="menu-features">
+          <h1 id = "forumTitle"> FEUP Networking Forum </h1>  
+          <div class = "features">
+            <ul id = "listFeatures">  
+              
+              <?php if (isset($_SESSION["username"])) { ?>
+                <li><a href="add_post.php"> Add Post </a></li>
+                <li><a href="honoraverage.php"> Honor Average </a></li>
+              <?php if (findUserCollectionID($_SESSION["username"])["collectionid"] != NULL) { ?>
+                <li><a href="postcollection.php"> Check your Post Collection </a></li> 
+              <?php  } else { ?>
+                <li><a href="createcollection.php"> Create Post Collection </a></li>  
+                  <?php } } ?>
             
-            <a href="../php/FAQ.php">FAQ</a>
-            <a href="../php/contacts.php">Contacts</a>
-            <a href="../php/aboutUs.php">About Us</a> <br> <br>
-
-            <?php if (isset($_SESSION["username"])) { ?>
-                <a href="add_post.php"> Add Post </a>
-                <a href="honoraverage.php"> Honor Average </a>
-                <a href="userhistory.php">  Comment History </a>
-                <a href="postcollection.php"> Post Collection </a>
-            <?php } ?>
+            </ul> 
+          </div>  
         </div>
 
 </head>

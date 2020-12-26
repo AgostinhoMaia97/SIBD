@@ -4,7 +4,6 @@ $msg = $_SESSION["msg"];
 unset($_SESSION["msg"]);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +32,6 @@ unset($_SESSION["msg"]);
     <label>
         Last Name: <input type="text" name="lastname">
     </label>
-
-    
 
     <label>
         Age: <input type="number" name="age">

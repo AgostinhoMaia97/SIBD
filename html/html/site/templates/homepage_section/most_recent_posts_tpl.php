@@ -14,8 +14,8 @@ require_once("../database/posts.php");
   </form>
 
   <article>
-  <aside id="related">
-   <h1> Most Recent Posts</h1>
+  <aside id="mostRecent">
+   <h3> Most Recent Posts</h3>
    <?php foreach ($stories as $story) { ?>
    <article>
    

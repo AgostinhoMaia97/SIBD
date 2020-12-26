@@ -34,8 +34,6 @@ if(strlen($password) < 8)
     print_r("pass");
     header('Location: ../pages/register.php');
     die();
-
-
 }
 */
 

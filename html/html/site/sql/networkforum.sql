@@ -89,10 +89,12 @@ create table commenthistory(
     date integer CHECK(date>=0)
 );
 
+
 drop table if exists collection;
 
 create table collection (
     collectionid integer PRIMARY KEY AUTOINCREMENT,
+    name text not null,
     username text references user
 );
 

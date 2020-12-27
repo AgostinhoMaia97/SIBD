@@ -6,7 +6,7 @@ To run this project:
 
 1- Please install docker and start a container. <br />
 2- Execute sudo git clone https://github.com/AgostinhoMaia97/SIBD.git inside the docker folder. <br />
-3- Give full permissions to the database file - sudo chmod 777 html/SIBD/html/html/site/sql/networkforum.db. <br />
-4- If you want to run the DataBase file, please first remove the existing one - sudo rm networkforum.db in sql folder. Then, execute - sqlite3 -init networkforum.sql networkforum.db. <br />
+3- Inside the docker folder, execute - cd /SIBD/html/html/SITE and then give full permissions - sudo chmod 777 -R ./*
+4- If you want to run the DataBase file, please first remove the existing one - sudo rm networkforum.db in sql folder. Then, execute - sudo sqlite3 -init networkforum.sql networkforum.db. <br />
 5- Please use Google Chrome browser to use the forum. Mozilla Firefox has some troubles with CSS. <br />
 

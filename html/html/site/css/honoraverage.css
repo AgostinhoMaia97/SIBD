@@ -1,0 +1,21 @@
+header{
+    background-color: #FFDEAD;
+    text-align: center;
+    
+  }
+
+#star
+{
+    display: flex;
+    justify-content: center;
+      
+}
+
+body{
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #FFDEAD;
+    text-align: center;
+    
+  }

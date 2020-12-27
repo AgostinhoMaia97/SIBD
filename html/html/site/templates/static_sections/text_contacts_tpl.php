@@ -18,7 +18,7 @@
                 Telephone: <strong>223456789</strong>
       </p>
       <div class="wpcmsdev-box">
-        <div class="box-content">
+        <div id="boxContent">
           <p>
             <strong>Networking Forum®</strong>
             <br>

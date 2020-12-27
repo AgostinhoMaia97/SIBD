@@ -33,18 +33,19 @@
         <div id ="menu-signup">
           <div class = "signup">
             <?php if (isset($_SESSION["username"])) { ?>
-              <img id = "profilePic" src="../images/users/<?php echo $_SESSION["username"] ?>.jpg" alt="profilepic">
-            <?php } ?>
-            <ul id = "signupOptions">
-              <li><a href="register.php">Register</a></li>
-              
+             
+            <?php }  else { ?> 
+              <ul id = "signupOptions">
+                <li><a href="register.php">Register</a></li>
+              <?php } ?>
+            
               <?php if (!isset($_SESSION["username"])) { ?>
                 <li><a href="login.php">Login</a></li>
               <?php } else { ?>
-                <form action="../actions/action_logout.php">
-                  
+                <form id = "logout" action="../actions/action_logout.php">
+                  <img id = "profilePic" src="../images/users/<?php echo $_SESSION["username"] ?>.jpg" alt="profilepic">
                   <span> <?php echo $_SESSION["username"]; ?> </span>
-                  <li><input type="submit" value="Logout">
+                  <input type="submit" value="Logout">
               </form>
             
             <?php } ?>

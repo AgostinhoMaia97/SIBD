@@ -1,22 +1,18 @@
-<h1>FAQ</h1>
+
 <p>
-  <a target="_blank" href= file:///home/david/SIBD/Projeto/images/FAQ-icon.jpeg>
-    <img src="../images/FAQ-icon.jpeg" alt="" width="400" height="300"
+    <a target="_blank" href= file:///home/david/SIBD/Projeto/images/FAQ-icon.jpeg>
+    <img src="../images/faq.png" alt="" width="400" height="300"
      class="aligncenter size-medium wp-image-448105" srcset=""  sizes="(max-width: 720px) 100vw, 720px">
   </a>
 </p>
-<button {class="accordion" text-align: center}>What is Honor Average and what benefits does having a High Honor Average brings me?</button>
+<button class="accordion" text-align: center>What is Honor Average?</button>
 <div class="panel1_honorAverage">
   <h1>Honor Average</h1>
   <p>Last updated: November 24, 2020</p>
-  <p>Honor Average is a concept created by the founders of this website, in an attempt to recognize its most supportive and dedicated users. Your Honor Average is calculated doing the average rating of your posts and comments.</p>
-  <p>So our objective is clear: we want to reward the Users that other Users have (and rate) with the highest of consideration, and that is why Honor Users were created.</p>
-  <p>By doing this, you become a Voice of Reason and a Figure of Respect within the comment section, having the responsibility to help others. But with this power comes great responsibility, If your comments and posts start getting
-    bad ratings and your Honor Average becomes lower than 4.6, you are stripped of your powers as a Honor User and you back to being a Regular User</p>
-
+  <p>Honor Average is a concept created by the founders of this website, with the attempt of giving the users a clear feedback about their posts and comments </p>
 </div>
 
-<button {class="accordion" text-align: center}> Is the data that I am giving safe and private?</button>
+<button class="accordion" text-align: center> Is the data that I am giving safe and private?</button>
 <div class="panel_PrivacyPolicy">
   <h1>Privacy Policy</h1>
 <p>Last updated: November 24, 2020</p>

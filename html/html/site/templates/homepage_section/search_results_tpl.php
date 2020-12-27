@@ -3,11 +3,12 @@ require_once("../database/comments.php");
 require_once("../database/posts.php");
 ?>
 <section id="posts">
+  <h1> Search Results:</h1>
 <article>
   <aside id="related">
-   <h1> Search Results:</h1>
+   
    <?php foreach ($stories as $story) { ?>
-   <article>
+   <article id = "recentArticles">
    
     <a href="../php/post.php?postid=<?php echo $story['postid'] ?>"><?php echo $story['posttitle'] ?></a>
     <p><?php echo $story['content'] ?></p>

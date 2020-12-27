@@ -17,7 +17,7 @@ require_once("../database/posts.php");
   <aside id="mostRecent">
    <h3> Most Recent Posts</h3>
    <?php foreach ($stories as $story) { ?>
-   <article>
+   <article id = "recentArticles">
    
     <a href="../php/post.php?postid=<?php echo $story['postid'] ?>"><?php echo $story['posttitle'] ?></a>
     <p><?php echo $story['content'] ?></p>

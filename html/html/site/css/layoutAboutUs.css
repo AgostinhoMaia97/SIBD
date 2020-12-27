@@ -45,3 +45,90 @@ body{
 #aboutUsText {
   font-size: 1.2em;
 }
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: 0.4s;
+}
+#boxContent {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 0px 0px #888888;
+  background-color: #eee;
+  width: 20%;
+}
+
+.postTitle  {
+  margin-top: 2em;
+  resize: none;
+}
+
+textarea {
+  resize: both;
+  height: 200px;
+  width: 600px;
+  margin-left: 3em;
+  margin-bottom: 3em;
+  margin-top: 3em
+}
+
+#SDN {
+  margin-left: 3em;
+}
+#VPN {
+  margin-left: 2em;
+}
+#WIRELESS {
+  margin-left: 2em;
+}
+
+input[type=submit] {
+  width: auto;
+  background-color: #333333 ;
+  color: white;
+  cursor: pointer;
+  border: none;
+  margin-top: 1em;
+  padding: 1em;
+  margin-left: 10em;
+  
+}
+
+button[type=submit] {
+  width: auto;
+  background-color: #333333 ;
+  color: white;
+  cursor: pointer;
+  border: none;
+  margin-top: 1em;
+  padding: 1em;
+  margin-left: auto;
+}
+
+.otherPages {
+  margin-top: 5em;
+  margin-right: 5em;
+}
+#footer {
+  margin-top: 5em;
+  background-color: #2a2f33;
+  color: white;
+  width: 100%;
+  padding: 1em;
+  margin-right: 1em;
+
+  height: 1em;
+}
+
+#footer p {
+  margin: 0;
+}

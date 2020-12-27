@@ -1,0 +1,19 @@
+header{
+    background-color: #FFDEAD;
+    text-align: center;
+    
+  }
+
+body{
+    background-color:#A6D1F5;
+    text-align: center;
+    
+  }
+
+#topic-list {
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 15px;
+    text-decoration: none;
+  }

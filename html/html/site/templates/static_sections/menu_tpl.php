@@ -3,7 +3,7 @@
         <h2>Networking Forum</h2>
         
       </div>
-      <ul>
+      <ul class = "otherPages">
         <li>
           <img src="../images/house-cropped.png"  style="vertical-align:middle; width:42px;height:43px;">
           <a href="../php/initialpage.php">Home Page</a>

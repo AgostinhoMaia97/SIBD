@@ -1,3 +1,7 @@
+* {
+  list-style: none;
+}
+
 body > header{
 
 	font: 16px Verdana;
@@ -63,6 +67,8 @@ body > header h2{
   }
   
 #signupOptions li {
+    margin-top: 10em;
+    margin-right: 10em;
     display: inline;
   }
 #signupOptions li a{
@@ -79,13 +85,29 @@ body > header h2{
 }
 
 #profilePic {
-  vertical-align: middle;
-  float: left;
-  width: 3em;
-  margin-right: 2em;
+
+  width: 2em;
+  margin-right: 0.8em;
+  margin-top: 0.9em;
   border-radius: 1em;
 }
 
+#logout span{
+  margin-left: 0;
+  margin-right: 5em;
+  margin-bottom: 0;
+}
+
+
+#logout input[type=submit]{
+  
+  width: 5em;             
+  margin-left: 10em;
+  margin-top: -1em;
+  padding:  0.8em;
+  vertical-align: middle;
+  
+}
 .features {
 	display: table;   /* Allow the centering to work */
   margin: 0px auto 0px auto;
@@ -96,6 +118,7 @@ body > header h2{
 	list-style-type:none;
   display:flex;
   justify-content: center;
+  margin-bottom: 1.5em;
  
   }
   
@@ -206,4 +229,187 @@ footer a {
 
 #pagination a{
   margin: 0 1em;
+}
+
+#search {
+  display: flex;
+}
+#search input{
+  flex-grow: 1;
+  margin: 1em 1em;
+}
+
+#posts {
+  margin-right: 2em;
+}
+
+#posts h3 {
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#recentArticles a {
+  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#recentArticles a:hover{
+  color: #ff0000;
+}
+
+.date {
+  border: 1px solid;
+  padding: 3px;
+  box-shadow: 1px 1px;
+  margin-bottom: 2em;
+}
+
+p.articleTitle {
+  
+  color: #000000; 
+  font-family: 'Raleway',sans-serif; 
+  font-size: 35px; 
+  font-weight: 80; 
+  margin: 0 0 24px; 
+  text-align: left; 
+   
+}
+
+p.articleContent {
+
+  color: #333333;; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px; 
+  margin: 0 0 24px; 
+  text-align: left; 
+}
+
+p.articleAuthor {
+  background-color: #333333; 
+  border: 1px solid #333333; 
+  border-radius: 3px 3px 3px 3px; 
+  box-shadow: 0 0 1px #333333 inset; 
+  color: white; 
+  padding: 5px; 
+}
+#postRate a {
+  
+  border-radius: 90%;
+  margin: 12px;
+  padding: 7px;
+
+  background: #fff;
+  border: 2px solid #333333;
+  color: #333333;
+  text-align: center;
+
+  font: 17px Arial, sans-serif;
+}
+
+
+#postRate a:hover{
+  color: #ff0000;
+}
+
+button[type=submit] {
+  width: auto;
+  background-color: #333333 ;
+  color: white;
+  cursor: pointer;
+  border: none;
+  margin-top: 1em;
+  padding: 1em;
+  margin-left: auto;
+}
+
+input[type=submit] {
+  width: auto;
+  background-color: #333333 ;
+  color: white;
+  cursor: pointer;
+  border: none;
+  
+  
+  padding: 1em;
+  margin-left: 10em;
+  
+}
+
+
+input[type=text] {
+  resize: horizontal;
+  max-width: 50%;
+}
+
+textarea {
+  resize: horizontal;
+  height: 100px;
+  max-width: 50%;
+}
+
+#comments h2{
+  margin-left: 0;
+}
+
+.user{
+  
+  background-color: #333333; 
+  border: 1px solid #333333; 
+  border-radius: 3px 3px 3px 3px; 
+  box-shadow: 0 0 1px #333333 inset; 
+  color: white; 
+  padding: 5px; 
+}
+
+.commentContent{
+  font-size: 22px;
+}
+
+#commentRate {
+  margin-top: 0.8em;
+}
+
+#commentRate a {
+  
+  border-radius: 90%;
+  margin: 7px;
+  padding: 4px;
+
+  background: #fff;
+  border: 1px solid #333333;
+  color: #333333;
+  text-align: center;
+
+  font: 10px Arial, sans-serif;
+}
+
+#commentRate a:hover{
+  color: #ff0000;
+}
+
+#posts h1{
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#related a {
+  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#maxrated {
+  margin-right: 2em;
+}
+#footer {
+  margin-top: 5em;
+  background-color: #2a2f33;
+  color: white;
+  width: 100%;
+  padding: 1em;
+  margin-right: 1em;
+
+  height: 1em;
+}
+
+#footer p {
+  margin: 0;
 }

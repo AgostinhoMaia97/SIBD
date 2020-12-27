@@ -12,8 +12,8 @@ create table user (
   
 );
 
-INSERT into user(username, firstname, lastname, age, pwd, email) VALUES ("maia77", "filipe", "maia", 23, "434235faa527ab5af15d3efd77212c4b064d852a", "filipemaia@gmail.com");
-INSERT into user(username, firstname, lastname, age, pwd, email) VALUES ("brunomauricio", "bruno", "mauricio", 22, "95f407c1ffa7689a0a3f2f21b1bf582fe8359351", "brunomauricio@gmail.com");
+--INSERT into user(username, firstname, lastname, age, pwd, email) VALUES ("maia77", "filipe", "maia", 23, "434235faa527ab5af15d3efd77212c4b064d852a", "filipemaia@gmail.com");
+-- INSERT into user(username, firstname, lastname, age, pwd, email) VALUES ("brunomauricio", "bruno", "mauricio", 22, "95f407c1ffa7689a0a3f2f21b1bf582fe8359351", "brunomauricio@gmail.com");
 
 
 drop table if exists topic;
@@ -40,9 +40,9 @@ create table forumpost (
     postrate integer CHECK(postrate>=0 AND postrate <=5)
     );
 
-INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "SDN rocking!", "maia77", "2020-11-11", "SDN");
-INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "VPN rocking!", "maia77", "2020-11-12", "VPN");
-INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "Wireless rocking!", "maia77", "2018-11-11", "Wireless");
+--INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "SDN rocking!", "maia77", "2020-11-11", "SDN");
+-- INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "VPN rocking!", "maia77", "2020-11-12", "VPN");
+-- INSERT into forumpost(postid, posttitle, username, published, topic) VALUES (NULL, "Wireless rocking!", "maia77", "2018-11-11", "Wireless");
 
 
 
@@ -54,10 +54,10 @@ create table postevaluation(
     number integer CHECK(number>=0 AND number<=5)
 );
 
-INSERT into postevaluation(username, postid, number) VALUES ("maia77", 1, 5);
-INSERT into postevaluation(username, postid, number) VALUES ("maia77", 1, 4);
-INSERT into postevaluation(username, postid, number) VALUES ("maia77", 2, 4);
-INSERT into postevaluation(username, postid, number) VALUES ("maia77", 2, 3);
+--INSERT into postevaluation(username, postid, number) VALUES ("maia77", 1, 5);
+-- INSERT into postevaluation(username, postid, number) VALUES ("maia77", 1, 4);
+-- INSERT into postevaluation(username, postid, number) VALUES ("maia77", 2, 4);
+-- INSERT into postevaluation(username, postid, number) VALUES ("maia77", 2, 3);
 
 
 

@@ -5,7 +5,7 @@
     </div>
     <div id="aboutUsText">
       <p>
-        O Projeto Networking Forum® functions as a branch of the project Caffeinated Engineer.
+        The Project Networking Forum® functions as a branch of the project Caffeinated Engineer.
         Founded in the 23rd of December of 2020 by two brothers, Agostinho and David Maia,
         its main purpose is the spreading of knowledge and communication between the users about
         topics related to the world of Engineering.  “Technology is best when it brings people together.”
@@ -13,7 +13,7 @@
       </p>
       <p>
         <a>
-          <img src="../images/logo-icon.png" id = "aboutUsLogo" width="720" height="300" class="aligncenter size-medium wp-image-448105" srcset=""  sizes="(max-width: 720px) 100vw, 720px">
+          <img src="../images/networkforumlog_semfundo.png" id = "aboutUsLogo" width="720" height="300" class="aligncenter size-medium wp-image-448105" srcset=""  sizes="(max-width: 720px) 100vw, 720px">
         </a>
       </p>
       <p>
